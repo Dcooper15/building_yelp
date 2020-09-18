@@ -1,0 +1,7 @@
+<h1>Home Page</h1>
+<p>${title}</p>
+
+<form action="/" method="POST">
+    ${data.map(restaurant => {
+        return `<p>${restaurant.name}</p>`
+    })}
