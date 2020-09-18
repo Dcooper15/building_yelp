@@ -10,7 +10,8 @@ class restaurantsList {
     static async getAll() {
         try {
             const response = await db.any(`SELECT * FROM restaurants;`);
-            console.log(response);
+            //console.log(response);
+            
             return response;
         } catch (error) {
             return error.message;

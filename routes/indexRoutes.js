@@ -3,6 +3,7 @@ const router = express.Router();
 
 const restaurantsModel = require("../models/indexModel");
 
+
 const renderPage = async res => {
     const restaurantsData = await restaurantsModel.getAll();
 
@@ -15,6 +16,8 @@ const renderPage = async res => {
             partial: "partial-index"
         }
     });
+
+
 }
 
 router.get("/", async (req, res, next) => {

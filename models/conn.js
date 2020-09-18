@@ -6,7 +6,7 @@ const password = "gHYHc6euJdYcPXcEm19k3KKPCVpBrmby";
 // can use this for almost all pgp's
 const pgp = require('pg-promise') ({
     query: function (event) {
-        console.log("QUERY:", event.query);
+        //console.log("QUERY:", event.query);
     }
 });
 

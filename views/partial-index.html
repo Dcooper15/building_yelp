@@ -1,7 +1,9 @@
 <h1>Home Page</h1>
-<p>${title}</p>
+<p><strong>${title}</strong></p>
 
 <form action="/" method="POST">
     ${data.map(restaurant => {
-        return `<p>${restaurant.name}</p>`
-    })}
+        return `<ul><a href="/restaurantdetail/${restaurant.slug}"><li>${restaurant.name}</a></li></ul>`
+    }).join('')}
+
+</form>
