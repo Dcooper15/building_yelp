@@ -3,7 +3,7 @@
 
 <form action="/" method="POST">
     ${data.map(restaurant => {
-        return `<ul><a href="/restaurantdetail/${restaurant.slug}"><li>${restaurant.name}</a></li></ul>`
+        return `<ul><a href="/restaurantdetails/${restaurant.slug}"><li>${restaurant.name}</a></li></ul>`
     }).join('')}
 
 </form>

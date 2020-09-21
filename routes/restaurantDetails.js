@@ -1,27 +1,31 @@
 const express = require("express");
 const router = express.Router();
+const restaurantsDetailModel = require("../models/indexModel");
 
-const restaurantsDetailsModel = require("../models/restaurantDetailsModel");
+
+
+const renderPage = async res => {
+    const restaurantsDetailData = await restaurantsDetailModel.getOneRestaurant();
+
+    return res.render("template", {
+        locals: {
+            title: "Restaurant Details",
+            restaurantData: restaurantsDetailData
+        },
+        partials: {
+            partial: "partial-details"
+        }
+    });
+
+
+}
 
 router.get("/:slug?", async (req, res, next) => {
     renderPage(res);
-    const restaurantsDetailsData = await restaurantsDetailsModel.getBySlug();
-        //console.log(req.params.id);
-
-
-        return res.render("template", {
-            locals: {
-                title: "Restaurants Details",
-                data: restaurantsDetailsData
-            },
-            partials: {
-                partial: "partial-details"
-            }
-        });
-    
-
-
 });
+
+
+
 
 
 
