@@ -5,7 +5,7 @@ const restaurantsDetailModel = require("../models/indexModel");
 
 
 const renderPage = async res => {
-    const restaurantsDetailData = await restaurantsDetailModel.getOneRestaurant();
+    const restaurantsDetailData = await restaurantsDetailModel.getOneRestaurant(req.params.slug);
 
     return res.render("template", {
         locals: {
@@ -20,7 +20,7 @@ const renderPage = async res => {
 
 }
 
-router.get("/:slug?", async (req, res, next) => {
+router.get("/:slug?", async (req, res) => {
     renderPage(res);
 });
 
